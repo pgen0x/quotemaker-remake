@@ -5,29 +5,25 @@ if (isset($_POST['create'])) {
 
 	$folder = "files/autoquotemaker/";
 	$overlay = $folder . "overlay.png";
-	$template = $folder . "pricecharttemplate.jpg";
+	$template = $folder . "pricecharttemplate.png";
 	$font_price = "files/_font/" . "OpenSans_Condensed-ExtraBold.ttf";
 	$font_date = "files/_font/" . "OpenSans-Bold.ttf";
 	$font_copyright = "files/_font/" . "KrinkesRegularPERSONAL.ttf";
 	$filename = $folder . md5(rand(000, 999)) . ".png";
-	$quote = @$_POST['quote'] ? $_POST['quote'] : 'YOUR QUOTE';
-	$copyright = @$_POST['copyright'] ? $_POST['copyright'] : 'bacotangw9';
-	$backgrond = @$_POST['background'];
+	$quote = @$_POST['price'] ? $_POST['price'] : 'PRICE';
+	// $copyright = @$_POST['copyright'] ? $_POST['copyright'] : 'bacotangw9';
+	// $backgrond = @$_POST['background'];
 	$footer_date	= date("d M");
 	$date	= date("m/d/Y");
-	$date_raw = $date;
-	$date_raw  = date('d M', strtotime('-1 day', strtotime($date_raw)));
 
 
-	if (!filter_var($backgrond, FILTER_VALIDATE_URL) === false) {
-		$bg = $backgrond;
-	} else {
+	
 		$bg = $template;
-	}
+
 
 	$image = new PHPImage();
-	$image->setQuality(10);
-	$image->setDimensionsFromImage($overlay);
+	// $image->setQuality(10);
+	$image->setDimensionsFromImage($bg);
 	$image->draw($bg);
 	// $image->draw($overlay, '0%', '0%');
 	$image->setFont($font_price);
@@ -36,8 +32,8 @@ if (isset($_POST['create'])) {
 	$image->setAlignHorizontal('center');
 	$image->textBox($quote, array(
 		'fontSize' => 30,
-		'x' => 60,
-		'y' => 182,
+		'x' => 112,
+		'y' => 237,
 		'width' => 520,
 		'height' => 110,
 		'debug' => false
@@ -57,8 +53,8 @@ if (isset($_POST['create'])) {
 	$image->setTextColor(array(0, 0, 0));
 	$image->textBox($date, array(
 		'fontSize' => 28,
-		'x' => 161,
-		'y' => 108,
+		'x' => 216,
+		'y' => 163,
 		'width' => 520,
 		'height' => 108,
 		'debug' => false
@@ -67,8 +63,8 @@ if (isset($_POST['create'])) {
 	$image->setTextColor(array(0, 0, 0));
 	$image->textBox($footer_date, array(
 		'fontSize' => 15,
-		'x' => 313,
-		'y' => 533,
+		'x' => 361, //309
+		'y' => 583, //533
 		'width' => 520,
 		'height' => 108,
 		'debug' => false
@@ -76,10 +72,54 @@ if (isset($_POST['create'])) {
 
 	$image->setFont($font_date);
 	$image->setTextColor(array(0, 0, 0));
-	$image->textBox($date_raw, array(
+	$image->textBox(date('d M', strtotime('-1 day', strtotime($date))), array(
 		'fontSize' => 15,
-		'x' => 215,
-		'y' => 533,
+		'x' => 267,
+		'y' => 583,
+		'width' => 520,
+		'height' => 108,
+		'debug' => false
+	));
+
+	$image->setFont($font_date);
+	$image->setTextColor(array(0, 0, 0));
+	$image->textBox(date('d M', strtotime('-2 day', strtotime($date))), array(
+		'fontSize' => 15,
+		'x' => 175,
+		'y' => 583,
+		'width' => 520,
+		'height' => 108,
+		'debug' => false
+	));
+
+	$image->setFont($font_date);
+	$image->setTextColor(array(0, 0, 0));
+	$image->textBox(date('d M', strtotime('-3 day', strtotime($date))), array(
+		'fontSize' => 15,
+		'x' => 83,
+		'y' => 583,
+		'width' => 520,
+		'height' => 108,
+		'debug' => false
+	));
+
+	$image->setFont($font_date);
+	$image->setTextColor(array(0, 0, 0));
+	$image->textBox(date('d M', strtotime('-4 day', strtotime($date))), array(
+		'fontSize' => 15,
+		'x' => -7,
+		'y' => 583,
+		'width' => 520,
+		'height' => 108,
+		'debug' => false
+	));
+
+	$image->setFont($font_date);
+	$image->setTextColor(array(0, 0, 0));
+	$image->textBox(date('d M', strtotime('-5 day', strtotime($date))), array(
+		'fontSize' => 15,
+		'x' => -98,
+		'y' => 583,
 		'width' => 520,
 		'height' => 108,
 		'debug' => false
@@ -90,7 +130,7 @@ if (isset($_POST['create'])) {
 
 	$imagebase64 = "data:image/png;base64," . base64_encode(file_get_contents($filename));
 	echo "<img src='" . $imagebase64 . "' class='img-fluid'/>
-	<div>><center>
+	<div><br><center>
 	<div class='buttons'>
                       <a href='" . $imagebase64 . "' class='btn btn-lg btn-primary' target='_blank' download='$filename'>Download</a>
 </center>

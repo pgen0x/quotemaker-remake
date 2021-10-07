@@ -2,7 +2,7 @@
 // Title Declaration
 switch (@$_GET['content']) {
 	case 'autoquotemaker':
-	$title = "IMG Quote Maker";
+	$title = "Image Price Maker";
 	break;
 
 	default:

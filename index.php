@@ -41,10 +41,10 @@ include "config/settings.php";
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.php">Quote Maker Tools</a>
+            <a href="index.php">IMG Price Maker</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.php">QMT</a>
+            <a href="index.php">IPM</a>
           </div>
           <ul class="sidebar-menu">
             <?php include "template/nav.php" ?>           
@@ -70,7 +70,7 @@ include "config/settings.php";
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2019 <div class="bullet"></div> Design By <a href="https://addrmwn.me">Adi Darmawan</a>
+          Copyright &copy; 2021 <div class="bullet"></div> Remake By <a href="https://ilhambar.bar">Ilham Nst</a>
         </div>
         <div class="footer-right">
           

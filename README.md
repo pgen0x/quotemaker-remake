@@ -1,5 +1,5 @@
 # Remake
-Basic from IMG Quote Maker -> Remake to IMG Maker Price for comodo coin
+Basic from IMG Quote Maker -> Remake to IMG Price Maker for comodo coin
 
 # Built with
 - <a href="https://github.com/stisla/stisla">Stisla Template by Stisla</a> - Design Front End

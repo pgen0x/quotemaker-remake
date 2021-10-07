@@ -1,18 +1,5 @@
-# img-quote-maker
-IMG Quote Maker Dynamic Using PHP
-
-# Getting Started 
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-# Fiture 
-- IMG Quote Maker
-
-# Installation
-Run With PHP and Apache Server Using XAMPP
-
-<pre><code>http://localhost/quotemaker
-</code></pre>
+# Remake
+Basic from IMG Quote Maker -> Remake to IMG Maker Price for comodo coin
 
 # Built with
 - <a href="https://github.com/stisla/stisla">Stisla Template by Stisla</a> - Design Front End
@@ -22,7 +9,7 @@ Run With PHP and Apache Server Using XAMPP
 # Authors
 - <b>Irfaan Programmer</b> - Code Runner - <a href="https://github.com/irfaanprogrammer">Irfaan Programmer </a>
 - <b>Adi Darmawan</b> - C-oderz - <a href="https://github.com/addrmwn">Adi Darmawan </a>
-
+- <b>Ilham Nst</b> - <a href="https://github.com/pgen0x">Ilham Nst </a>
 # License
 This project is licensed under the MIT License
 

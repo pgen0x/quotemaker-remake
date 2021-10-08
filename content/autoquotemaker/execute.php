@@ -9,12 +9,12 @@ if (isset($_POST['create'])) {
 	$font_price = "files/_font/" . "OpenSans_Condensed-ExtraBold.ttf";
 	$font_date = "files/_font/" . "OpenSans-Bold.ttf";
 	$font_copyright = "files/_font/" . "KrinkesRegularPERSONAL.ttf";
-	$filename = $folder . md5(rand(000, 999)) . ".png";
 	$quote = @$_POST['price'] ? $_POST['price'] : 'PRICE';
 	// $copyright = @$_POST['copyright'] ? $_POST['copyright'] : 'bacotangw9';
 	// $backgrond = @$_POST['background'];
 	$footer_date	= date("d M");
 	$date	= date("m/d/Y");
+	$filename = $date. "_".md5(rand(000, 999)) . ".png";
 
 
 	
